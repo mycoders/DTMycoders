@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import React, { useState } from "react";
-import emailjs from "emailjs-com";
+// import emailjs from "emailjs-com";
 import Head from "next/head"; // Import the Head component from Next.js
 import { Router, useRouter } from "next/router";
 
@@ -25,7 +25,7 @@ const Payment: React.FunctionComponent = () => {
 
       try {
         const response = fetch(
-          "http://localhost/sirproject/backend/contact_mail.php",
+          "http://localhost/dtrust_latest/backend/contact_mail.php",
           {
             method: "POST",
             body: form,
@@ -79,6 +79,7 @@ const Payment: React.FunctionComponent = () => {
           href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         ></link>
         <meta property="og:title" content="Decentralized Trust Agreements" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           property="og:description"
           content="DTrust generates decentralized smart contract trust agreements on the ethereum network for estate planning, asset protection, and much more."
@@ -108,7 +109,7 @@ const Payment: React.FunctionComponent = () => {
         </div>
         <div className="row">
           <div className="col-lg-8 offset-md-2 text">
-            <form>
+            <form onSubmit={(e) => e.preventDefault()}>
               <div className="col-lg-12">
                 <label style={{ paddingTop: 20 }}>Name</label>
               </div>
